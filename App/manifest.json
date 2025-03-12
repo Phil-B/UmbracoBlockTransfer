@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Umbraco Block Transfer",
+  "version": "1.0",
+  "description": "Copy and paste Umbraco block content between instances.",
+  "permissions": ["storage", "activeTab", "scripting", "clipboardRead", "clipboardWrite"],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon_128.png"
+  },
+  "icons": {
+    "16": "icon_16.png",
+    "48": "icon_48.png",
+    "128": "icon_128.png"
+  },
+  "web_accessible_resources": ["popup.js"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["popup.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
